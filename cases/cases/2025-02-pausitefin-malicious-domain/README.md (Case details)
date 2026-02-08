@@ -1,1 +1,232 @@
+# Case #001: pausitefin.site - Malicious Domain Analysis
 
+![Status](https://img.shields.io/badge/Status-Reported-green)
+![Severity](https://img.shields.io/badge/Severity-Medium-orange)
+![Type](https://img.shields.io/badge/Type-Malware-red)
+
+## 📋 Executive Summary
+
+Identified and analyzed a malicious domain (pausitefin.site) exhibiting forced fullscreen browser behavior without user consent. The unauthorized action indicates potential malware delivery or scam infrastructure. Successfully reported to Indian authorities.
+
+## 🎯 Key Details
+
+| Attribute | Value |
+|-----------|-------|
+| **Domain** | pausitefin.site |
+| **IP Address** | 86.54.24.187 |
+| **Discovery Date** | February 2025 |
+| **Current Status** | Inactive/Taken Down |
+| **Threat Type** | Malicious Website / Unauthorized Browser Control |
+| **Severity** | Medium |
+
+## 🔍 Incident Details
+
+### Discovery
+On [date], a friend's laptop automatically loaded the domain pausitefin.site, which immediately triggered forced fullscreen mode without any user interaction, warning, or permission request.
+
+### Behavior Observed
+- ✅ Automatic fullscreen activation
+- ✅ No user consent requested
+- ✅ Suspicious redirection behavior
+- ✅ Potential malware delivery mechanism
+
+### Initial Assessment
+The forced fullscreen technique is commonly associated with:
+- Scareware campaigns
+- Tech support scams
+- Malware delivery systems
+- Phishing attacks
+- Browser locker malware
+
+## 🛠️ Technical Analysis
+
+### Tools Used
+- **Kali Linux** - Primary analysis platform
+- **Nmap** - Network reconnaissance
+- **nslookup/dig** - DNS enumeration
+- **whois** - Domain registration lookup
+- **OSINT** - Open source intelligence gathering
+
+### Network Reconnaissance
+```bash
+# Initial DNS lookup
+nslookup pausitefin.site
+
+# Nmap scan
+nmap -sV -sC 86.54.24.187
+
+# WHOIS lookup
+whois pausitefin.site
+whois 86.54.24.187
+```
+
+### Findings
+
+**Domain Information:**
+- Domain: pausitefin.site
+- TLD: .site (commonly abused by threat actors)
+- Current Status: Appears inactive/taken down
+
+**Infrastructure:**
+- IP Address: 86.54.24.187
+- Geolocation: [Based on WHOIS data]
+- Hosting Provider: [If identified]
+
+**Threat Assessment:**
+- Forced fullscreen = Unauthorized system control
+- No legitimate use case for this behavior
+- Consistent with malware delivery infrastructure
+- Short-lived domain (common for malicious campaigns)
+
+## 📊 Indicators of Compromise (IOCs)
+
+### Network IOCs
+```
+pausitefin.site
+86.54.24.187
+```
+
+### Behavioral IOCs
+- Automatic fullscreen trigger
+- No user interaction required
+- Immediate activation upon page load
+
+## 🚨 Reporting & Disclosure
+
+### Authorities Notified
+
+✅ **National Cyber Crime Reporting Portal**
+- Organization: Ministry of Home Affairs, Government of India
+- Platform: https://cybercrime.gov.in/
+- Acknowledgment Number: **2190228001720**
+- Date Reported: February 2025
+- Status: Submitted
+
+⏳ **CERT-In** (Pending)
+- Organization: Indian Computer Emergency Response Team
+- Platform: https://www.cert-in.org.in/
+- Status: Report in progress
+
+⏳ **URLhaus** (Pending)
+- Organization: abuse.ch
+- Platform: https://urlhaus.abuse.ch/
+- Status: Report in progress
+
+⏳ **VirusTotal** (Pending)
+- Organization: Google
+- Platform: https://www.virustotal.com/
+- Status: Analysis pending
+
+## 📈 Impact Assessment
+
+### Potential Impact
+- **Users at Risk:** Unknown (potentially thousands)
+- **Financial Loss:** None confirmed
+- **Data Breach:** None confirmed
+- **System Compromise:** Potential
+
+### Mitigation
+- Domain currently inactive (likely taken down)
+- Reported to authorities for blocklist addition
+- Public documentation for awareness
+
+## 🔐 Recommendations
+
+### For Users
+1. Keep browsers and security software updated
+2. Be cautious of unexpected fullscreen activations
+3. Report suspicious websites immediately
+4. Use browser security extensions
+
+### For Organizations
+1. Add pausitefin.site to blocklists
+2. Monitor for similar domain patterns
+3. Implement browser security policies
+4. User awareness training
+
+## 📚 Lessons Learned
+
+1. ✅ Quick documentation is crucial (domain went offline rapidly)
+2. ✅ Responsible disclosure protects other users
+3. ✅ Even inactive threats should be reported for intelligence
+4. ✅ Multiple reporting channels maximize impact
+5. ✅ Technical analysis strengthens credibility of reports
+
+## 📅 Timeline
+
+| Date | Event |
+|------|-------|
+| Feb XX, 2025 | Domain discovered with malicious behavior |
+| Feb XX, 2025 | Technical analysis conducted |
+| Feb XX, 2025 | Reported to National Cyber Crime Portal |
+| Feb XX, 2025 | Acknowledgment received (2190228001720) |
+| Feb XX, 2025 | Domain observed as inactive |
+| Feb XX, 2025 | Case documented publicly |
+
+## 🔗 References
+
+- National Cyber Crime Portal: https://cybercrime.gov.in/
+- CERT-In: https://www.cert-in.org.in/
+- URLhaus: https://urlhaus.abuse.ch/
+- VirusTotal: https://www.virustotal.com/
+
+## 📎 Attachments
+
+- [Technical Analysis](./technical-analysis.md)
+- [IOCs List](./iocs.txt)
+- [Timeline](./timeline.md)
+- [Acknowledgments](./acknowledgments.md)
+
+---
+
+**Analyst:** [Your Name]  
+**Date:** February 2025  
+**Status:** Active Investigation  
+**Classification:** Public
+```
+
+---
+
+## 📄 FILE 3: cases/2025-02-pausitefin-malicious-domain/iocs.txt
+```
+# Indicators of Compromise (IOCs)
+# Case: pausitefin.site Malicious Domain
+# Date: February 2025
+# Analyst: [Your Name]
+
+# DOMAIN INDICATORS
+pausitefin.site
+
+# IP ADDRESS INDICATORS
+86.54.24.187
+
+# BEHAVIORAL INDICATORS
+- Forced fullscreen activation without user consent
+- Automatic browser control upon page load
+- No warning or permission request
+
+# THREAT CLASSIFICATION
+Category: Malicious Website
+Type: Potential Malware Delivery / Scam Infrastructure
+Severity: Medium
+Confidence: High
+
+# RECOMMENDED ACTIONS
+- Block domain at DNS level
+- Block IP address at firewall
+- Add to browser blocklists
+- Monitor for similar patterns
+- User awareness training
+
+# DETECTION RULES (Suggested)
+alert dns any any -> any any (msg:"Malicious Domain pausitefin.site"; dns_query; content:"pausitefin.site"; nocase; sid:1000001;)
+alert ip any any -> 86.54.24.187 any (msg:"Connection to Malicious IP 86.54.24.187"; sid:1000002;)
+
+# YARA RULE (Example - if you had malware sample)
+# rule pausitefin_malicious_domain
+# {
+#     strings:
+#         $domain = "pausitefin.site" nocase
+#     condition:
+#         $domain
+# }
