@@ -1,1 +1,37 @@
+# Indicators of Compromise (IOCs)
+# Case: pausitefin.site Malicious Domain
+# Date: February 2025
 
+# DOMAIN INDICATORS
+pausitefin.site
+
+# IP ADDRESS INDICATORS
+86.54.24.187
+
+# BEHAVIORAL INDICATORS
+- Forced fullscreen activation without user consent
+- Automatic browser control upon page load
+- No warning or permission request
+
+# THREAT CLASSIFICATION
+Category: Malicious Website
+Type: Potential Malware Delivery / Scam Infrastructure
+Severity: Medium
+Confidence: High
+
+# RECOMMENDED ACTIONS
+- Block domain at DNS level
+- Block IP address at firewall
+- Add to browser blocklists
+- Monitor for similar patterns
+- User awareness training
+
+# REPORTING STATUS
+Reported to: National Cyber Crime Portal (India)
+Acknowledgment: 2190228001720
+Date: February 2025
+Status: Successfully Submitted
+
+# DETECTION RULES (Suggested)
+alert dns any any -> any any (msg:"Malicious Domain pausitefin.site"; dns_query; content:"pausitefin.site"; nocase; sid:1000001;)
+alert ip any any -> 86.54.24.187 any (msg:"Connection to Malicious IP 86.54.24.187"; sid:1000002;)
