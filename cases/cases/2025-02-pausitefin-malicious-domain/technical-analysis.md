@@ -1,10 +1,10 @@
-# Technical Analysis Report
+Technical Analysis Report
 
-## Case: pausitefin.site Malicious Domain
+Case: pausitefin.site Malicious Domain
 
-**Analyst:** [Your Name]  
-**Date:** February 2025  
-**Classification:** Public  
+Analyst: Anurag Dusad  
+Date: 08 February 2025  
+Classification: Public  
 
 ---
 
